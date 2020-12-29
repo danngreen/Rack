@@ -56,11 +56,11 @@ dist: all
 	mkdir -p dist/"$(SLUG)"
 	@# Strip and copy plugin binary
 	cp $(TARGET) dist/"$(SLUG)"/
-ifdef ARCH_MAC
-	$(STRIP) -S dist/"$(SLUG)"/$(TARGET)
-else
-	$(STRIP) -s dist/"$(SLUG)"/$(TARGET)
-endif
+# ifdef ARCH_MAC
+# 	$(STRIP) -S dist/"$(SLUG)"/$(TARGET)
+# else
+# 	$(STRIP) -s dist/"$(SLUG)"/$(TARGET)
+# endif
 	@# Copy distributables
 ifdef ARCH_MAC
 	rsync -rR $(DISTRIBUTABLES) dist/"$(SLUG)"/
